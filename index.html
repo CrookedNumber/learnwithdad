@@ -23,11 +23,11 @@
 <script>
 $(function(){
   // Bind the swipeHandler callback function to the swipe event on div.box
-  $( "div.box" ).on( "swipe", swipeHandler );
-  function swipeHandler( event ){
+  $("div.box").on("swipe", swipeHandler);
+  function swipeHandler(event) {
     var r=Math.floor(Math.random()*26)
     var letter = String.fromCharCode(65 + r);
-    $( event.target ).text(letter);
+    $(event.target).text(letter);
   }
 });
 </script>
