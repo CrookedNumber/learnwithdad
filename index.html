@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KNOW YOUR LETTERS!</title>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <style>
+  div.box{font-size: 30em;}
+  </style>
+</head>
+<body>
+ 
+<div class="box">A</div>
+ 
+<script>
+$(function(){
+  // Bind the swipeHandler callback function to the swipe event on div.box
+  $( "div.box" ).on( "swipe", swipeHandler );
+  function swipeHandler( event ){
+    var r=Math.floor(Math.random()*26)
+    var letter = String.fromCharCode(65 + r);
+    $( event.target ).text(letter);
+  }
+});
+</script>
+ 
+</body>
+</html>
