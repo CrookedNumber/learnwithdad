@@ -25,9 +25,9 @@ $(function(){
   var count = 0;
   $("div.box").html("A");
   
-  $("div.box").on("swipe", boxSwipe);
+  $("div.box").on("tap", boxTap);
   
-  function boxSwipe(event) {
+  function boxTap(event) {
 	var r, letter;
   	count++;
   	if (count % 5 === 0) {
