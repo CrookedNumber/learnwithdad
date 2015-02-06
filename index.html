@@ -8,7 +8,7 @@
   <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <style>
-  div.box{
+  div.card{
 	text-align: left;
     font-size: 25em;
     width: 50%;
@@ -18,16 +18,16 @@
 </head>
 <body>
  
-<div class="box"></div>
+<div class="card"></div>
  
 <script>
 $(function(){
   var count = 0;
-  $("div.box").html("A");
+  $("div.card").html("A");
   
-  $("div.box").on("tap", boxTap);
+  $("div.card").on("tap", cardTap);
   
-  function boxTap(event) {
+  function cardTap(event) {
 	var r, letter;
   	count++;
   	if (count % 5 === 0) {
@@ -37,7 +37,7 @@ $(function(){
 	  var r=Math.floor(Math.random()*26)
 	  var letter = String.fromCharCode(65 + r);
 	}
-    $("div.box").html(letter);
+    $("div.card").html(letter);
   }
 });
 </script>
