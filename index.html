@@ -18,11 +18,12 @@
 </head>
 <body>
  
-<div class="box">A</div>
+<div class="box"></div>
  
 <script>
 $(function(){
   var count = 0;
+  $("div.box").html("A");
   
   $("div.box").on("swipe", boxSwipe);
   
