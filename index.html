@@ -27,6 +27,10 @@ $(function(){
   for (var i=0; i<26; i++) {
   	sets.letters[i] = String.fromCharCode(65 + i);
   }
+  sets.numbers = [];
+  for (var i=1; i<21; i++) {
+  	sets.numbers[i] = i;
+  }
 
   var count = 0;
   $("div.card").html(sets.letters[0]);
