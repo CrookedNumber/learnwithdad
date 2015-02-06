@@ -22,8 +22,14 @@
  
 <script>
 $(function(){
+  var sets = {};
+  sets.letters = [];
+  for (var i=0; i<26; i++) {
+  	sets.letters[i] = String.fromCharCode(65 + i);
+  }
+
   var count = 0;
-  $("div.card").html("A");
+  $("div.card").html(sets.letters[0]);
   
   $("div.card").on("tap", cardTap);
   
@@ -34,8 +40,8 @@ $(function(){
 	  letter = "<img src='/images/deer.jpg'>";
   	}
 	else {
-	  var r=Math.floor(Math.random()*26)
-	  var letter = String.fromCharCode(65 + r);
+	  var r=Math.floor(Math.random()*26);
+	  var letter = sets.letters[r];
 	}
     $("div.card").html(letter);
   }
