@@ -22,12 +22,21 @@
  
 <script>
 $(function(){
-  // Bind the swipeHandler callback function to the swipe event on div.box
-  $("div.box").on("swipe", swipeHandler);
-  function swipeHandler(event) {
-    var r=Math.floor(Math.random()*26)
-    var letter = String.fromCharCode(65 + r);
-    $(event.target).text(letter);
+  var count = 0;
+  
+  $("div.box").on("swipe", boxSwipe);
+  
+  function boxSwipe(event) {
+	var r, letter;
+  	count++;
+  	if (count % 5 === 0) {
+	  letter = "<img src='/images/deer.jpg'>";
+  	}
+	else {
+	  var r=Math.floor(Math.random()*26)
+	  var letter = String.fromCharCode(65 + r);
+	}
+    $("div.box").html(letter);
   }
 });
 </script>
