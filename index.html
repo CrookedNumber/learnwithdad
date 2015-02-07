@@ -50,8 +50,8 @@ $(function(){
   }
 
   var count = 0;
-  $("div.card").html(sets[set][0]);
-  
+  $("div.card").html(sets[set][0]); // todo, grab first, not 0
+
   $("div.card").on("tap", cardTap);
   
   function cardTap(event) {
