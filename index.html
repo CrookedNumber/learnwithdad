@@ -25,11 +25,11 @@ $(function(){
   var sets = {};
   sets.letters = [];
   for (var i=0; i<26; i++) {
-  	sets.letters[i] = String.fromCharCode(65 + i);
+    sets.letters.push(String.fromCharCode(65 + i));
   }
   sets.numbers = [];
   for (var i=1; i<21; i++) {
-  	sets.numbers[i] = i;
+    sets.numbers.push(i);
   }
   sets.addition = [];
   for (var i=1; i<10; i++) {
