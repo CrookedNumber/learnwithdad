@@ -22,24 +22,25 @@
  
 <script>
 $(function(){
+  var i,j;
   var sets = {};
   sets.letters = [];
-  for (var i=0; i<26; i++) {
+  for (i=0; i<26; i++) {
     sets.letters.push(String.fromCharCode(65 + i));
   }
   sets.numbers = [];
-  for (var i=1; i<21; i++) {
+  for (i=1; i<21; i++) {
     sets.numbers.push(i);
   }
   sets.addition = [];
-  for (var i=1; i<10; i++) {
-    for (var j=1; j<10; j++) {
+  for (i=1; i<10; i++) {
+    for (j=1; j<10; j++) {
 	  sets.addition.push(i+"+"+j);
     }
   }
   sets.subtraction = [];
-  for (var i=1; i<10; i++) {
-    for (var j=1; j<10; j++) {
+  for (i=1; i<10; i++) {
+    for (j=1; j<10; j++) {
 	  if (i>=j) {
 	    sets.subtraction.push(i+"-"+j);
       }
