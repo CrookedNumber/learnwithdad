@@ -24,6 +24,8 @@
 $(function(){
   var i,j;
   var sets = {};
+  var set = 'letters';
+
   sets.letters = [];
   for (i=0; i<26; i++) {
     sets.letters.push(String.fromCharCode(65 + i));
@@ -48,7 +50,7 @@ $(function(){
   }
 
   var count = 0;
-  $("div.card").html(sets.letters[0]);
+  $("div.card").html(sets[set][0]);
   
   $("div.card").on("tap", cardTap);
   
@@ -59,8 +61,8 @@ $(function(){
 	  letter = "<img src='/images/deer.jpg'>";
   	}
 	else {
-	  var r=Math.floor(Math.random()*26);
-	  var letter = sets.letters[r];
+	  var r=Math.floor(Math.random()*sets[set].length);
+	  var letter = sets[set][r];
 	}
     $("div.card").html(letter);
   }
