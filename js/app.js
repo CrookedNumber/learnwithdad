@@ -30,7 +30,7 @@ $(function(){
 
   active = shuffle(sets[set]);
 
-  $("div.card").html(active[0]);
+  $("div.card").html(active[count]);
   $("div.card").on("tap", cardTap);
   
   function cardTap(event) {
