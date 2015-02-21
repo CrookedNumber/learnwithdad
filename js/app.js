@@ -31,7 +31,6 @@ $(function(){
 
   var count = 0;
   $("div.card").html(active[0]);
-
   $("div.card").on("tap", cardTap);
   
   function cardTap(event) {
