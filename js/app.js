@@ -8,6 +8,7 @@ $(function(){
   var maxNumber = 9;
   var maxAddition = 9
   var maxSubtraction = 9;
+  var totalRewards = 17;
 
   sets.letters = [];
   for (i=0; i<26; i++) {
@@ -41,7 +42,7 @@ $(function(){
 	var r, card, img;
   	count++;
 	if (count % rewardInterval === 0) {
-	  img = Math.floor(Math.random()*17) + 1;
+	  img = Math.floor(Math.random()*totalRewards) + 1;
 	  card = "<img src='/images/" + img  + ".jpg'>";
   	}
 	else {
