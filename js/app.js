@@ -38,16 +38,16 @@ $(function(){
   $("div.card").on("tap", cardTap);
   
   function cardTap(event) {
-	var r, letter, img;
+	var r, card, img;
   	count++;
 	if (count % rewardInterval === 0) {
 	  img = Math.floor(Math.random()*17) + 1;
-	  letter = "<img src='/images/" + img  + ".jpg'>";
+	  card = "<img src='/images/" + img  + ".jpg'>";
   	}
 	else {
-	  var letter = active[count % active.length];
+	  var card = active[count % active.length];
 	}
-    $("div.card").html(letter);
+    $("div.card").html(card);
   }
 
   function shuffle(array) {
