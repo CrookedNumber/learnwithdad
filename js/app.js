@@ -2,6 +2,7 @@ $(function(){
   var i,j;
   var sets = {};
   var set = 'letters';
+  var active = [];
 
   sets.letters = [];
   for (i=0; i<26; i++) {
@@ -26,8 +27,10 @@ $(function(){
     }
   }
 
+  active = shuffle(sets[set]);
+
   var count = 0;
-  $("div.card").html(sets[set][0]); // todo, grab first, not 0
+  $("div.card").html(active[0]);
 
   $("div.card").on("tap", cardTap);
   
@@ -39,9 +42,27 @@ $(function(){
 	  letter = "<img src='/images/" + img  + ".jpg'>";
   	}
 	else {
-	  var r=Math.floor(Math.random()*sets[set].length);
-	  var letter = sets[set][r];
+	  var letter = active[count % active.length];
 	}
     $("div.card").html(letter);
+  }
+
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex ;
+
+    // While there remain elements to shuffle...
+    while (currentIndex !== 0) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   }
 });
