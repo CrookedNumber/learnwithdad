@@ -4,24 +4,28 @@ $(function(){
   var sets = {};
   var set = 'letters';
   var active = [];
+  var rewardInterval = 5;
+  var maxNumber = 9;
+  var maxAddition = 9
+  var maxSubtraction = 9;
 
   sets.letters = [];
   for (i=0; i<26; i++) {
     sets.letters.push(String.fromCharCode(65 + i));
   }
   sets.numbers = [];
-  for (i=1; i<10; i++) {
+  for (i=1; i<=maxNumber; i++) {
     sets.numbers.push(i);
   }
   sets.addition = [];
-  for (i=1; i<10; i++) {
-    for (j=1; j<10; j++) {
+  for (i=1; i<maxAddition; i++) {
+    for (j=1; j<maxAddition; j++) {
 	  sets.addition.push(i+"+"+j);
     }
   }
   sets.subtraction = [];
-  for (i=1; i<10; i++) {
-    for (j=1; j<10; j++) {
+  for (i=1; i<maxSubtraction; i++) {
+    for (j=1; j<maxSubtraction; j++) {
 	  if (i>=j) {
 	    sets.subtraction.push(i+"-"+j);
       }
@@ -36,7 +40,7 @@ $(function(){
   function cardTap(event) {
 	var r, letter, img;
   	count++;
-  	if (count % 5 === 0) {
+	if (count % rewardInterval === 0) {
 	  img = Math.floor(Math.random()*17) + 1;
 	  letter = "<img src='/images/" + img  + ".jpg'>";
   	}
