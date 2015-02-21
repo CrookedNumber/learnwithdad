@@ -1,5 +1,6 @@
 $(function(){
   var i,j;
+  var count = 0;
   var sets = {};
   var set = 'letters';
   var active = [];
@@ -29,7 +30,6 @@ $(function(){
 
   active = shuffle(sets[set]);
 
-  var count = 0;
   $("div.card").html(active[0]);
   $("div.card").on("tap", cardTap);
   
