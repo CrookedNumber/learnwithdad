@@ -32,10 +32,11 @@ $(function(){
   $("div.card").on("tap", cardTap);
   
   function cardTap(event) {
-	var r, letter;
+	var r, letter, img;
   	count++;
   	if (count % 5 === 0) {
-	  letter = "<img src='/images/" +  + ".jpg'>";
+	  img = Math.floor(Math.random()*13) + 1;
+	  letter = "<img src='/images/" + img  + ".jpg'>";
   	}
 	else {
 	  var r=Math.floor(Math.random()*sets[set].length);
