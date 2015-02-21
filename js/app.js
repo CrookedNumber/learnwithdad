@@ -37,7 +37,7 @@ $(function(){
 	var r, letter, img;
   	count++;
   	if (count % 5 === 0) {
-	  img = Math.floor(Math.random()*13) + 1;
+	  img = Math.floor(Math.random()*17) + 1;
 	  letter = "<img src='/images/" + img  + ".jpg'>";
   	}
 	else {
