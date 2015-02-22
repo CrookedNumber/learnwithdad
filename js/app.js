@@ -11,10 +11,7 @@ $(function(){
   var totalRewards = 17;
   var changeColors = true;
 
-  sets.letters = [];
-  for (i=0; i<26; i++) {
-    sets.letters.push(String.fromCharCode(65 + i));
-  }
+  sets.letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
   sets.numbers = [];
   for (i=1; i<=maxNumber; i++) {
     sets.numbers.push(i);
