@@ -47,7 +47,7 @@ $(function(){
 	  card = "<img src='/images/" + img  + ".jpg'>";
   	}
 	else {
-	  var card = active[count % active.length];
+	  var card = active[count % (active.length-1)];
 	  if (changeColors) {
 	    changeCardColor();
 	  }
