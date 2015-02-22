@@ -9,6 +9,7 @@ $(function(){
   var maxAddition = 9
   var maxSubtraction = 9;
   var totalRewards = 17;
+  var changeColors = true;
 
   sets.letters = [];
   for (i=0; i<26; i++) {
@@ -36,6 +37,9 @@ $(function(){
   active = shuffle(sets[set]);
 
   $("div.card").html(active[count]);
+  if (changeColors) {
+    changeCardColor();
+  }
   $("div.card").on("tap", cardTap);
   
   function cardTap(event) {
@@ -47,8 +51,19 @@ $(function(){
   	}
 	else {
 	  var card = active[count % active.length];
+	  if (changeColors) {
+	    changeCardColor();
+	  }
 	}
     $("div.card").html(card);
+  }
+
+  function changeCardColor() {
+    $("div.card").css("color", randomHex());
+  }
+
+  function randomHex() {
+    return '#' + Math.random().toString(16).substr(-6);
   }
 
   function shuffle(array) {
