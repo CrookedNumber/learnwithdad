@@ -9,7 +9,7 @@ $(function(){
   var maxAddition = 9
   var maxSubtraction = 9;
   var totalRewards = 17;
-  var changeColors = true;
+  var changeColors = $.cookie("changeColors") === 'true';
 
   sets.letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
   sets.numbers = [];
