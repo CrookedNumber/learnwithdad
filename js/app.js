@@ -9,7 +9,9 @@ $(function(){
   var maxAddition = 9
   var maxSubtraction = 9;
   var totalRewards = 17;
-  var changeColors = $.cookie("changeColors");
+  var settings = {
+    changeColors: $.cookie("changeColors")
+  };
 
   sets.letters_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
   sets.letters_lower = "abcdefghijklmnopqrstuvwxyz".split('');
@@ -36,7 +38,7 @@ $(function(){
   active = shuffle(sets[set]);
 
   $("div.card").html(active[count]);
-  if (changeColors === '1') {
+  if (settings.changeColors === '1') {
     changeCardColor();
   }
   $("div.card").on("tap", cardTap);
@@ -50,7 +52,7 @@ $(function(){
   	}
 	else {
 	  var card = active[count % (active.length-1)];
-	  if (changeColors === '1') {
+	  if (settings.changeColors === '1') {
 	    changeCardColor();
 	  }
 	}
