@@ -2,7 +2,7 @@ $(function(){
   var i,j;
   var count = 0;
   var sets = {};
-  var set = 'letters';
+  var set = 'letters_upper';
   var active = [];
   var rewardInterval = 5;
   var maxNumber = 9;
@@ -11,7 +11,9 @@ $(function(){
   var totalRewards = 17;
   var changeColors = $.cookie("changeColors");
 
-  sets.letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+  sets.letters_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+  sets.letters_lower = "abcdefghijklmnopqrstuvwxyz".split('');
+
   sets.numbers = [];
   for (i=1; i<=maxNumber; i++) {
     sets.numbers.push(i);
