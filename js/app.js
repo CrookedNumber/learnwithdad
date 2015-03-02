@@ -17,8 +17,11 @@ $(function(){
       maxAddition: parseInt($.cookie("maxAddition")) || 10,
       maxSubtraction: parseInt($.cookie("maxSubtraction")) || 10
     };
+
+    // Re-set settings form elements
     var checked = (settings.changeColors === '1');
     $("#changeColors").prop('checked', checked).checkboxradio("refresh");
+
     $("#rewardInterval option[value='" + settings.rewardInterval + "']").prop("selected", true);    
     $("#rewardInterval").selectmenu('refresh', true);
 
@@ -41,18 +44,17 @@ $(function(){
     sets.addition = [];
     for (i=1; i<settings.maxAddition; i++) {
       for (j=1; j<settings.maxAddition; j++) {
-  	  sets.addition.push(i+"+"+j);
+        sets.addition.push(i+"+"+j);
       }
     }
     sets.subtraction = [];
     for (i=1; i<settings.maxSubtraction; i++) {
       for (j=1; j<settings.maxSubtraction; j++) {
-  	  if (i>=j) {
-  	    sets.subtraction.push(i+"-"+j);
+        if (i>=j) {
+          sets.subtraction.push(i+"-"+j);
         }
       }
     }
-  
     active = shuffle(sets[set]);
   
     $("div.card").html(active[count]);
