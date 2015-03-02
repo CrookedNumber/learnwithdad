@@ -24,6 +24,25 @@
 
 <div data-role="panel" id="settings">
 <form>
+
+    <fieldset data-role="controlgroup" data-mini="true">
+      <legend>Choose a set:</legend>
+      <input type="radio" name="set" id="letters_upper" value="letters_upper">
+      <label for="letters_upper">Letters (uppercase)</label>
+
+      <input type="radio" name="set" id="letters_lower" value="letters_lower">
+      <label for="letters_lower">Letters (lowercase)</label>
+
+      <input type="radio" name="set" id="numbers" value="numbers">
+      <label for="numbers">Numbers</label>
+
+      <input type="radio" name="set" id="addition" value="addition">
+      <label for="addition">Addition</label>
+
+      <input type="radio" name="set" id="subtraction" value="subtraction">
+      <label for="subtraction">Subtraction</label>
+    </fieldset>
+
     <label for="changeColors">Random color for every card
       <input type="checkbox" name="changeColors" id="changeColors">
     </label>

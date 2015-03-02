@@ -6,18 +6,20 @@ $(function(){
     var i,j;
     var count = 0;
     var sets = {};
-    var set = 'letters_upper';
     var active = [];
     var maxNumber = 9;
     var maxAddition = 9
     var maxSubtraction = 9;
     var totalRewards = 17;
+    var set = $.cookie("set") || "letters_upper";
     var settings = {
+      set: set,
       changeColors: $.cookie("changeColors"),
       rewardInterval: parseInt($.cookie("rewardInterval"))
     };
     var checked = (settings.changeColors === '1');
     $("#changeColors").prop('checked', checked).checkboxradio("refresh");
+    $("#" + set).prop("checked", "checked").checkboxradio("refresh");
 
     sets.letters_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
     sets.letters_lower = "abcdefghijklmnopqrstuvwxyz".split('');

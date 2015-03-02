@@ -11,4 +11,10 @@ $(function(){
       $.cookie("rewardInterval", val, { expires: 28 });
     }
   );
+  $("[name=set]").on("change",
+    function() {
+      var val = $(this).val();
+      $.cookie("set", val, { expires: 28 });
+    }
+  );
 });
