@@ -5,4 +5,10 @@ $(function(){
       $.cookie("changeColors", checked, { expires: 28 });
     }
   );
+  $("#rewardInterval").on("change",
+    function() {
+      var val = $(this).val();
+      $.cookie("rewardInterval", val, { expires: 28 });
+    }
+  );
 });

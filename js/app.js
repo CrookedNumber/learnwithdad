@@ -8,15 +8,14 @@ $(function(){
     var sets = {};
     var set = 'letters_upper';
     var active = [];
-    var rewardInterval = 5;
     var maxNumber = 9;
     var maxAddition = 9
     var maxSubtraction = 9;
     var totalRewards = 17;
     var settings = {
-      changeColors: $.cookie("changeColors")
+      changeColors: $.cookie("changeColors"),
+      rewardInterval: parseInt($.cookie("rewardInterval"))
     };
-
     var checked = (settings.changeColors === '1');
     $("#changeColors").prop('checked', checked).checkboxradio("refresh");
 
@@ -52,7 +51,7 @@ $(function(){
     function cardTap(event) {
       var r, card, img;
       count++;
-      if (count % rewardInterval === 0) {
+      if (count % settings.rewardInterval === 0) {
         img = Math.floor(Math.random()*totalRewards) + 1;
         card = "<img src='/images/" + img  + ".jpg'>";
       }
