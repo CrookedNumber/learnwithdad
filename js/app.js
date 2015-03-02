@@ -7,38 +7,46 @@ $(function(){
     var count = 0;
     var sets = {};
     var active = [];
-    var maxNumber = 9;
-    var maxAddition = 9
-    var maxSubtraction = 9;
     var totalRewards = 17;
     var set = $.cookie("set") || "letters_upper";
     var settings = {
       set: set,
       changeColors: $.cookie("changeColors") || "1",
-      rewardInterval: parseInt($.cookie("rewardInterval")) || 5
+      rewardInterval: parseInt($.cookie("rewardInterval")) || 5,
+      maxNumber: parseInt($.cookie("maxNumber")) || 10,
+      maxAddition: parseInt($.cookie("maxAddition")) || 10,
+      maxSubtraction: parseInt($.cookie("maxSubtraction")) || 10
     };
     var checked = (settings.changeColors === '1');
     $("#changeColors").prop('checked', checked).checkboxradio("refresh");
-    $("#rewardInterval option[value='" + settings.rewardInterval + "']").prop("selected", true);
+    $("#rewardInterval option[value='" + settings.rewardInterval + "']").prop("selected", true);    
     $("#rewardInterval").selectmenu('refresh', true);
-    $("#" + set).prop("checked", "checked").checkboxradio("refresh");
+
+    $("#maxNumber option[value='" + settings.maxNumber + "']").prop("selected", true);
+    $("#maxNumber").selectmenu('refresh', true);
+
+    $("#maxAddition option[value='" + settings.maxAddition + "']").prop("selected", true);
+    $("#maxAddition").selectmenu('refresh', true);
+
+    $("#maxSubtraction option[value='" + settings.maxSubtraction + "']").prop("selected", true);
+    $("#maxSubtraction").selectmenu('refresh', true);
 
     sets.letters_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
     sets.letters_lower = "abcdefghijklmnopqrstuvwxyz".split('');
   
     sets.numbers = [];
-    for (i=1; i<=maxNumber; i++) {
+    for (i=1; i<=settings.maxNumber; i++) {
       sets.numbers.push(i);
     }
     sets.addition = [];
-    for (i=1; i<maxAddition; i++) {
-      for (j=1; j<maxAddition; j++) {
+    for (i=1; i<settings.maxAddition; i++) {
+      for (j=1; j<settings.maxAddition; j++) {
   	  sets.addition.push(i+"+"+j);
       }
     }
     sets.subtraction = [];
-    for (i=1; i<maxSubtraction; i++) {
-      for (j=1; j<maxSubtraction; j++) {
+    for (i=1; i<settings.maxSubtraction; i++) {
+      for (j=1; j<settings.maxSubtraction; j++) {
   	  if (i>=j) {
   	    sets.subtraction.push(i+"-"+j);
         }

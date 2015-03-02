@@ -17,4 +17,22 @@ $(function(){
       $.cookie("set", val, { expires: 28 });
     }
   );
+  $("#maxNumber").on("change",
+    function() {
+      var val = $(this).val();
+      $.cookie("maxNumber", val, { expires: 28 });
+    }
+  );
+  $("#maxAddition").on("change",
+    function() {
+      var val = $(this).val();
+      $.cookie("maxAddition", val, { expires: 28 });
+    }
+  );
+  $("#maxSubtraction").on("change",
+    function() {
+      var val = $(this).val();
+      $.cookie("maxSubtraction", val, { expires: 28 });
+    }
+  );
 });
