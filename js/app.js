@@ -19,6 +19,8 @@ $(function(){
     };
     var checked = (settings.changeColors === '1');
     $("#changeColors").prop('checked', checked).checkboxradio("refresh");
+    $("#rewardInterval option[value='" + settings.rewardInterval + "']").prop("selected", true);
+    $("#rewardInterval").selectmenu('refresh', true);
     $("#" + set).prop("checked", "checked").checkboxradio("refresh");
 
     sets.letters_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
