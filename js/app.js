@@ -50,16 +50,16 @@ $(function(){
     $("div.card").on("tap", cardTap);
     
     function cardTap(event) {
-  	var r, card, img;
-    	count++;
-  	if (count % rewardInterval === 0) {
-  	  img = Math.floor(Math.random()*totalRewards) + 1;
-  	  card = "<img src='/images/" + img  + ".jpg'>";
-    	}
-  	else {
-  	  var card = active[count % (active.length-1)];
-  	  setCardColor();
-  	}
+      var r, card, img;
+      count++;
+      if (count % rewardInterval === 0) {
+        img = Math.floor(Math.random()*totalRewards) + 1;
+        card = "<img src='/images/" + img  + ".jpg'>";
+      }
+      else {
+        var card = active[count % (active.length-1)];
+        setCardColor();
+      }
       $("div.card").html(card);
     }
   
