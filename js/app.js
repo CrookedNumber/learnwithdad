@@ -14,8 +14,8 @@ $(function(){
     var set = $.cookie("set") || "letters_upper";
     var settings = {
       set: set,
-      changeColors: $.cookie("changeColors"),
-      rewardInterval: parseInt($.cookie("rewardInterval"))
+      changeColors: $.cookie("changeColors") || "1",
+      rewardInterval: parseInt($.cookie("rewardInterval")) || 5
     };
     var checked = (settings.changeColors === '1');
     $("#changeColors").prop('checked', checked).checkboxradio("refresh");
