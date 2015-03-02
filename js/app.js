@@ -45,9 +45,8 @@ $(function(){
     active = shuffle(sets[set]);
   
     $("div.card").html(active[count]);
-    if (settings.changeColors === '1') {
-      changeCardColor();
-    }
+    setCardColor();
+
     $("div.card").on("tap", cardTap);
     
     function cardTap(event) {
@@ -59,15 +58,20 @@ $(function(){
     	}
   	else {
   	  var card = active[count % (active.length-1)];
-  	  if (settings.changeColors === '1') {
-  	    changeCardColor();
-  	  }
+  	  setCardColor();
   	}
       $("div.card").html(card);
     }
   
-    function changeCardColor() {
-      $("div.card").css("color", randomHex());
+    function setCardColor() {
+      var color;
+      if (settings.changeColors == '1') {
+        color = randomHex()
+      }
+      else {
+        color = '#000000';
+      }
+      $("div.card").css("color", color);
     }
   
     function randomHex() {
