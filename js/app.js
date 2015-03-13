@@ -4,6 +4,7 @@ $(function(){
 
   function init() {
     var i,j;
+    var active_index = 0;
     var count = 0;
     var sets = {};
     var active = [];
@@ -70,7 +71,11 @@ $(function(){
         card = "<img src='/images/" + img  + ".jpg'>";
       }
       else {
-        var card = active[count % (active.length-1)];
+        active_index++;
+        if (active_index >= active.length) {
+          active_index = 0;
+        }
+        var card = active[active_index];
         setCardColor();
       }
       $("div.card").html(card);
