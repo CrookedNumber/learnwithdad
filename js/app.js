@@ -58,7 +58,7 @@ $(function(){
     }
     active = shuffle(sets[set]);
   
-    $("div.card").html(active[count]);
+    $("div.card").html(active[active_index]);
     setCardColor();
 
     $("div.card").on("swipeleft", cardSwipe);
