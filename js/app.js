@@ -64,7 +64,7 @@ $(function(){
     $("div.card").on("tap", cardTap);
     
     function cardTap(event) {
-      var r, card, img;
+      var card, img;
       count++;
       if (count % settings.rewardInterval === 0) {
         img = Math.floor(Math.random()*totalRewards) + 1;
@@ -75,7 +75,7 @@ $(function(){
         if (active_index >= active.length) {
           active_index = 0;
         }
-        var card = active[active_index];
+        card = active[active_index];
         setCardColor();
       }
       $("div.card").html(card);
