@@ -5,7 +5,7 @@ $(function(){
   function init() {
     var i,j;
     var active_index = 0;
-    var count = 0;
+    var count = 1;
     var sets = {};
     var active = [];
     var totalRewards = 17;
@@ -61,19 +61,30 @@ $(function(){
     $("div.card").html(active[count]);
     setCardColor();
 
-    $("div.card").on("tap", cardTap);
+    $("div.card").on("swipeleft", cardSwipe);
+    $("div.card").on("swiperight", cardSwipe);
     
-    function cardTap(event) {
+    function cardSwipe(event) {
+      var increment = (event.type == 'swiperight') ? 1 : -1;
       var card, img;
-      count++;
+
+      // Can't swipeleft into a non-positive count
+      if (increment == -1 && count == 1) {
+        return;
+      }
+
+      count += increment;
       if (count % settings.rewardInterval === 0) {
         img = Math.floor(Math.random()*totalRewards) + 1;
         card = "<img src='/images/" + img  + ".jpg'>";
       }
       else {
-        active_index++;
+        active_index += increment;
         if (active_index >= active.length) {
           active_index = 0;
+        }
+        if (active_index < 0) {
+          active_index = active.length - 1;
         }
         card = active[active_index];
         setCardColor();
