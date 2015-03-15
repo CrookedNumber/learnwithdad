@@ -10,6 +10,7 @@ $(function(){
     var active = [];
     var totalRewards = 17;
     var set = $.cookie("set") || "letters_upper";
+    var rewards = [];
     var settings = {
       set: set,
       changeColors: $.cookie("changeColors") || "1",
@@ -57,7 +58,13 @@ $(function(){
         }
       }
     }
+
+    for (i=1; i<=totalRewards; i++) {
+      rewards.push(i);
+    }
+
     active = shuffle(sets[set]);
+    rewards = shuffle(rewards);
   
     $("div.card").html(active[active_index]);
     setCardColor();
@@ -76,8 +83,8 @@ $(function(){
 
       count += increment;
       if (count % settings.rewardInterval === 0) {
-        img = Math.floor(Math.random()*totalRewards) + 1;
-        card = "<img src='/images/" + img  + ".jpg'>";
+        img = ((count / settings.rewardInterval) - 1) % rewards.length;
+        card = "<img src='/images/" + rewards[img]  + ".jpg'>";
       }
       else {
         active_index += increment;
