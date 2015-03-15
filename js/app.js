@@ -94,12 +94,8 @@ $(function(){
         card = "<img src='/images/" + rewards[img]  + ".jpg'>";
       }
       else {
-        if (active_index >= active.length) {
-          active_index = 0;
-        }
-        if (active_index < 0) {
-          active_index = active.length - 1;
-        }
+        // if index > length, wrap it around to start
+        active_index = active_index % active.length;
         card = active[active_index];
         setCardColor();
       }
