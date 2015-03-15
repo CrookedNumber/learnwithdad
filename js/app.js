@@ -71,13 +71,18 @@ $(function(){
 
     $("div.card").on("swipeleft", cardSwipe);
     $("div.card").on("swiperight", cardSwipe);
+
+    $(document).on("keydown", cardSwipe);
     
     function cardSwipe(event) {
-      var increment = (event.type === 'swipeleft') ? 1 : -1;
+      if (event.type === 'keydown' && event.which !== 37 && event.which !== 39) {
+        return;
+      }
+      var increment = (event.type === 'swipeleft' || event.which === 39) ? 1 : -1;
       var card, img;
 
       // Can't swipeleft into a non-positive count
-      if (event.type == 'swiperight' && count == 1) {
+      if (increment === -1 && count == 1) {
         return;
       }
 
