@@ -73,7 +73,7 @@ $(function(){
     $("div.card").on("swiperight", cardSwipe);
     
     function cardSwipe(event) {
-      var increment = (event.type == 'swiperight') ? 1 : -1;
+      var increment = (event.type === 'swipeleft') ? 1 : -1;
       var card, img;
 
       // Can't swipeleft into a non-positive count
