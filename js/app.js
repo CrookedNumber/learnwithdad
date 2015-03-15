@@ -20,6 +20,7 @@ $(function(){
     };
 
     // Re-set settings form elements
+    $("#" + set).prop("checked", "checked").checkboxradio("refresh");
     var checked = (settings.changeColors === '1');
     $("#changeColors").prop('checked', checked).checkboxradio("refresh");
 
