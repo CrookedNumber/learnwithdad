@@ -82,12 +82,18 @@ $(function(){
       }
 
       count += increment;
-      if (count % settings.rewardInterval === 0) {
+      var outOfReward = (String(active_index).substr(-2) === ".5");
+      var intoReward = (count % settings.rewardInterval === 0);
+
+      // When moving out of, or into, a reward card, we use increments of .5
+      // i.e., it's in purgatory, not at either index (before or after reward slot)
+      active_index += (outOfReward || intoReward) ? increment * .5 : increment;
+
+      if (intoReward) {
         img = ((count / settings.rewardInterval) - 1) % rewards.length;
         card = "<img src='/images/" + rewards[img]  + ".jpg'>";
       }
       else {
-        active_index += increment;
         if (active_index >= active.length) {
           active_index = 0;
         }
