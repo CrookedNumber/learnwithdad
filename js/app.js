@@ -77,7 +77,7 @@ $(function(){
       var card, img;
 
       // Can't swipeleft into a non-positive count
-      if (increment == -1 && count == 1) {
+      if (event.type == 'swiperight' && count == 1) {
         return;
       }
 
