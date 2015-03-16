@@ -93,14 +93,19 @@ $(function(){
       // When moving out of, or into, a reward card, we use increments of .5
       // i.e., it's in purgatory, not at either index (before or after reward slot)
       active_index += (outOfReward || intoReward) ? increment * .5 : increment;
+      // if index > length, wrap it around to start
+      if (active_index < 0) {
+        active_index = active_index + active.length;
+      }
+      if (active_index >= active.length) {
+        active_index = active.length - active_index;
+      }
 
       if (intoReward) {
         img = ((count / settings.rewardInterval) - 1) % rewards.length;
         card = "<img src='/images/" + rewards[img]  + ".jpg'>";
       }
       else {
-        // if index > length, wrap it around to start
-        active_index = active_index % active.length;
         card = active[active_index];
         setCardColor();
       }
