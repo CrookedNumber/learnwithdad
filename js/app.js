@@ -58,6 +58,18 @@ $(function(){
         }
       }
     }
+	
+	sets.bob_1_1 = "am at mat sat Sam".split(' ');
+	sets.bob_1_2 = "Mac dad cat cad tad sad dam mad mass".split(' ');
+	sets.bob_1_3 = "hog rat ram got hot rot cog ham rod dog sod Tom dot hat rag had cot Todd cod".split(' ');
+	sets.bob_1_4 = "bad tag bat bag bog tab rob mob sob cob cab gab Bob".split(' ');
+	sets.bob_1_5 = "and can pad pit dip rip did Tim sit it dig ran pan pin bit hit tin him hid big hip hop nip tic Don bib rid cap not pat mitt bin rim dim Pam nap in on an pot pod nod Dan tan man nag din rig dig map sap tap pat top mop rap bid".split(' ');
+	sets.bob_1_7 = "jig jam jab job Jim jog win wag wit wig Jon Jan".split(' ');
+	sets.bob_1_8 = "pun jug fun fin fan fog rug hug bun tug tub but rut puff fat jut fib fad gum rub fuss bus bum dug hut mud fib fit fig up pup".split(' ');
+	sets.bob_1_9 = "caps cats dogs hogs fits rugs hugs pups tubs jobs fans jugs wigs wags rags naps rats rods pits pans pots bags jogs wins rubs figs cups hats".split(' ');
+	sets.bob_1_10 = "Peg hen bet pen jet wet beg hem Ted den ten pet Ben red wed Bess met Meg mess ref get bed fed set Jeff".split(' ');
+	sets.bob_1_11 = "let kid Kim well kit fill ax Mas tax fix six sax pill lip lad lap Jill mix ox keg box fox lot keg leg doll".split(' ');
+	sets.bob_1_12 = "vet van yes zig zag zip zap zam yell vat yet yam yip yap".split(' ');
 
     sets.sightwords_preprimer = "a and away big blue can come down find for funny go help here I in is it jump little look make me my not one play red run said see the three to two up we where yellow you".split(' ');
     sets.sightwords_primer = "all am are at ate be black brown but came did do eat four get good have he into like must new no now on our out please pretty ran ride saw say she so soon that there they this too under want was well went what white who will with yes".split(' ');
