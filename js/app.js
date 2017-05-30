@@ -87,6 +87,9 @@ $(function(){
     rewards = shuffle(rewards);
   
     $("div.card").html(active[active_index]);
+	
+	$("#counter-current").html(1);
+	$("#counter-total").html(sets[set].length);
     setCardColor();
 
     $("div.card").on("swipeleft", cardSwipe);
@@ -122,10 +125,13 @@ $(function(){
       }
 
       if (intoReward) {
+		$("#counter").hide();
         img = ((count / settings.rewardInterval) - 1) % rewards.length;
         card = "<img src='/images/" + rewards[img]  + ".jpg'>";
       }
       else {
+		$("#counter").show()
+		$("#counter-current").html(active_index + 1);
         card = active[active_index];
         setCardColor();
       }

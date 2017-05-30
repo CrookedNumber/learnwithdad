@@ -4,3 +4,9 @@ div.card{
   width: 50%;
   margin: 0 auto;
 }
+
+#counter {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
