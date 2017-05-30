@@ -63,7 +63,7 @@ $(function(){
 	sets.bob_1_2 = "Mac dad cat cad tad sad dam mad mass".split(' ');
 	sets.bob_1_3 = "hog rat ram got hot rot cog ham rod dog sod Tom dot hat rag had cot Todd cod".split(' ');
 	sets.bob_1_4 = "bad tag bat bag bog tab rob mob sob cob cab gab Bob".split(' ');
-	sets.bob_1_5 = "and can pad pit dip rip did Tim sit it dig ran pan pin bit hit tin him hid big hip hop nip tic Don bib rid cap not pat mitt bin rim dim Pam nap in on an pot pod nod Dan tan man nag din rig dig map sap tap pat top mop rap bid".split(' ');
+	sets.bob_1_5 = "and can pad pit dip rip did Tim sit it dig ran pan pin bit hit tin him hid big hip hop nip tic Don bib rid cap not pat mitt bin rim dim Pam nap in on an pot pod nod Dan tan man nag din rig map sap tap top mop rap bid".split(' ');
 	sets.bob_1_7 = "jig jam jab job Jim jog win wag wit wig Jon Jan".split(' ');
 	sets.bob_1_8 = "pun jug fun fin fan fog rug hug bun tug tub but rut puff fat jut fib fad gum rub fuss bus bum dug hut mud fib fit fig up pup".split(' ');
 	sets.bob_1_9 = "caps cats dogs hogs fits rugs hugs pups tubs jobs fans jugs wigs wags rags naps rats rods pits pans pots bags jogs wins rubs figs cups hats".split(' ');
