@@ -20,6 +20,8 @@ $(function(){
       maxSubtraction: parseInt($.cookie("maxSubtraction")) || 10
     };
 
+    $(".card").fitText(0.5);
+
     // Re-set settings form elements
     $("#" + set).prop("checked", "checked").checkboxradio("refresh");
     var checked = (settings.changeColors === '1');
