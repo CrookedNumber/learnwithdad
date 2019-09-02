@@ -17,7 +17,8 @@ $(function(){
       rewardInterval: parseInt($.cookie("rewardInterval")) || 5,
       maxNumber: parseInt($.cookie("maxNumber")) || 10,
       maxAddition: parseInt($.cookie("maxAddition")) || 10,
-      maxSubtraction: parseInt($.cookie("maxSubtraction")) || 10
+      maxSubtraction: parseInt($.cookie("maxSubtraction")) || 10,
+      maxMultiplication: parseInt($.cookie("maxMultiplication")) || 10
     };
 
     $(".card").fitText(0.5);
@@ -39,6 +40,9 @@ $(function(){
     $("#maxSubtraction option[value='" + settings.maxSubtraction + "']").prop("selected", true);
     $("#maxSubtraction").selectmenu('refresh', true);
 
+    $("#maxMultiplication option[value='" + settings.maxMultiplication + "']").prop("selected", true);
+    $("#maxMultiplication").selectmenu('refresh', true);
+
     sets.letters_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
     sets.letters_lower = "abcdefghijklmnopqrstuvwxyz".split('');
   
@@ -58,6 +62,12 @@ $(function(){
         if (i>=j) {
           sets.subtraction.push(i+"-"+j);
         }
+      }
+    }
+    sets.multiplication = [];
+    for (i=1; i<=settings.maxMultiplication; i++) {
+      for (j=1; j<=settings.maxMultiplication; j++) {
+        sets.multiplication.push(i+"x"+j);
       }
     }
 	

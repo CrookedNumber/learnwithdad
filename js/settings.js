@@ -35,4 +35,10 @@ $(function(){
       $.cookie("maxSubtraction", val, { expires: 28 });
     }
   );
+  $("#maxMultiplication").on("change",
+    function() {
+      var val = $(this).val();
+      $.cookie("maxMultiplication", val, { expires: 28 });
+    }
+  );
 });
